@@ -5,17 +5,17 @@
 using namespace std;
 
 
-float credit=1;
-string fruit[6]={"Cherry","Bell","Lemon","Orange","Star","Skull"};
+float credit=1;    // set initial credits
+string fruit[6]={"Cherry","Bell","Lemon","Orange","Star","Skull"};      //set results
 
 int random(int n)
 {
   int m=rand()%n;       //OK
-  return m;
+  return m;                    //function for random numbers 
 }
 void roll()
 {
-  credit-=0.2;
+  credit-=0.2;   //paid credits
   string results[3];
   int bell_num=0,skull_num=0,same_num=0;
 
@@ -26,8 +26,8 @@ void roll()
     results[i]=fruit[m];
     if(results[i]=="Bell")
     {
-      bell_num++;
-    }
+      bell_num++;             
+    }                               // get the number of bells and skulls
     if(results[i]=="Skull")
     {
       skull_num++;
@@ -97,6 +97,6 @@ int main()
       break;
     roll();
 
-  }while(credit>0.2);
+  }while(credit>0.2);    //check if credits is sufficient
   printf("In the end,you have %.1f credits\n",credit);
 }
